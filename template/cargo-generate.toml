@@ -1,0 +1,29 @@
+[template]
+cargo_generate_version = ">=0.10.0"
+exclude = [
+"check.yml",
+"release-candidate.yml",
+"release.yml",
+"safety.yml",
+"scheduled.yml",
+"test.yml"
+]
+
+[placeholders.gh-username]
+type = "string"
+prompt = "GitHub username (or organization)"
+default = "CarteraMesh"
+# The username cannot end with a hyphen, too, but
+# this requirement is not captured by the regex at the moment.
+regex = "^[A-Za-z0-9][A-Za-z0-9-]{0,38}$"
+
+[placeholders.project-description]
+type = "string"
+prompt = "Project description"
+default = "TBD"
+
+[conditional.'crate_type == "lib"']
+ignore = [ "src/main.rs" ]
+
+[conditional.'crate_type == "bin"']
+ignore = [ "src/lib.rs" ]
