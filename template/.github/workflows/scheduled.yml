@@ -6,6 +6,7 @@ permissions:
 env:
   RUST_LOG: "info"
 on:
+  workflow_dispatch:
   schedule:
     - cron:  '7 7 1,7,20 * *'
 concurrency:
