@@ -45,7 +45,6 @@ jobs:
           # Specifies what to use as the backend providing cache
           # Can be set to "github", "buildjet", or "warpbuild"
           # default: "github"
-          cache-provider: "github"
           cache-bin: "true"
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@stable

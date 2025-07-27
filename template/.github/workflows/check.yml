@@ -63,7 +63,6 @@ jobs:
           # Specifies what to use as the backend providing cache
           # Can be set to "github", "buildjet", or "warpbuild"
           # default: "github"
-          cache-provider: "github"
           cache-bin: "true"
       - name: Install ${{ matrix.toolchain }}
         uses: dtolnay/rust-toolchain@master
@@ -92,7 +91,6 @@ jobs:
           # Specifies what to use as the backend providing cache
           # Can be set to "github", "buildjet", or "warpbuild"
           # default: "github"
-          cache-provider: "github"
           cache-bin: "true"
       - name: Install stable
         uses: dtolnay/rust-toolchain@stable
@@ -121,7 +119,6 @@ jobs:
           # Specifies what to use as the backend providing cache
           # Can be set to "github", "buildjet", or "warpbuild"
           # default: "github"
-          cache-provider: "github"
           cache-bin: "true"
       - name: Install nightly
         uses: dtolnay/rust-toolchain@nightly
@@ -148,7 +145,6 @@ jobs:
           # Specifies what to use as the backend providing cache
           # Can be set to "github", "buildjet", or "warpbuild"
           # default: "github"
-          cache-provider: "github"
           cache-bin: "true"
       - name: Install stable
         uses: dtolnay/rust-toolchain@stable
@@ -176,7 +172,6 @@ jobs:
           # Specifies what to use as the backend providing cache
           # Can be set to "github", "buildjet", or "warpbuild"
           # default: "github"
-          cache-provider: "github"
           cache-bin: "true"
       - name: Install nightly
         uses: dtolnay/rust-toolchain@nightly
