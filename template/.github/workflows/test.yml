@@ -26,20 +26,18 @@ jobs:
         # toolchain
         toolchain: [stable]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           submodules: true
       - uses: ubicloud/rust-cache@v2
         with:
           cache-on-failure: "true"
           cache-all-crates: "true"
-          cache-workspace-crates: "true"
           workspaces: |
             . -> target
           # Specifies what to use as the backend providing cache
           # Can be set to "github", "buildjet", or "warpbuild"
           # default: "github"
-          cache-bin: "true"
       - name: Install ${{ matrix.toolchain }}
         uses: dtolnay/rust-toolchain@master
         with:
@@ -69,7 +67,7 @@ jobs:
       #   if: runner.os == 'Windows'
       # - run: vcpkg install openssl:x64-windows-static-md
       #   if: runner.os == 'Windows'
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           submodules: true
       - name: Install stable
@@ -88,18 +86,16 @@ jobs:
         features:
           - "default"
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: ubicloud/rust-cache@v2
         with:
           cache-on-failure: "true"
           cache-all-crates: "true"
-          cache-workspace-crates: "true"
           workspaces: |
             . -> target
           # Specifies what to use as the backend providing cache
           # Can be set to "github", "buildjet", or "warpbuild"
           # default: "github"
-          cache-bin: "true"
       - name: Install stable
         uses: dtolnay/rust-toolchain@stable
         with:

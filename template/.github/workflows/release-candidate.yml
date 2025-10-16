@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -45,13 +45,11 @@ jobs:
         with:
           cache-on-failure: "true"
           cache-all-crates: "true"
-          cache-workspace-crates: "true"
           workspaces: |
             . -> target
           # Specifies what to use as the backend providing cache
           # Can be set to "github", "buildjet", or "warpbuild"
           # default: "github"
-          cache-bin: "true"
       - name: Install cargo-release
         run: cargo install cargo-release
 
